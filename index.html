@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>name sorting app by shifa</title>
+		<style>
+			*{font-size: 40px; font-family: Times New Roman;}
+			body{background-color: linen;}
+			h1{background-color: pink; color:black; width:50%;border-radius:30px;}
+			input[type=submit]{background-color:pink;color:black;}
+			input[type=text]{background-color:pink;color:black;}
+		</style>
+	</head>
+
+	<body>
+		<center>
+		<h1>~ NAME SORTER ~</h1>
+
+		<form onsubmit= "sort()">
+			<input type="text" id="string" placeholder="enter a string" />
+			<br/><br/>
+			<input type="submit" value="check"/>
+			<h2 id="msg" />
+		</form>
+
+		<script>
+			function sort()
+			{
+				event.preventDefault();
+				let string=document.getElementById("string");
+				let msg=document.getElementById("msg");
+				
+				if(string.value==="")
+				{
+					alert("enter a string!");
+					msg.innerHTML="";
+					string.focus();
+					return;
+				}
+
+				let org= string.value;
+				let rev= org.split("").sort().join("");
+				msg.innerHTML= rev;
+					
+			}
+		</script>
+		</center>
+	</body>
+</html>
